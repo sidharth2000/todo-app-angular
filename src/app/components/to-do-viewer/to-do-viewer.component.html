@@ -1,0 +1,18 @@
+<div class="card viewer-box">
+    <div class="card-header bg-light" style="border-radius: 5px; border: 0px;">
+        <div class="row text-center">
+            <div class="col-sm-4 heading" matRipple><a (click)="onClickNameFilter()">Name<span class="bi" [ngClass]="{'bi-sort-down':!sortDownName,'bi-sort-up':sortDownName}"></span></a></div>
+            <div class="col-sm-4 heading" matRipple><a (click)="onClickPriorityFilter()">Priority<span class="bi" [ngClass]="{'bi-sort-down':!sortDownPriority,'bi-sort-up':sortDownPriority}"></span></a></div>
+            <div class="col-sm-4 heading" matRipple><a (click)="onClickDateFilter()">Date</a><span class="bi" [ngClass]="{'bi-sort-down':!sortDownDate,'bi-sort-up':sortDownDate}"></span></div>
+        </div>
+    </div>
+    <div class="card-body" style="overflow-y:auto; height: 334.11px;">
+        <div class="card mt-1 shadow shadow-sm" matRipple *ngFor="let toDo of toDoList" (click)="onClickTask($event)">
+            <div class="card-body row text-center" style="font-size: 10px;">
+                <div class="col-sm-4">{{toDo.taskName}}</div>
+                <div class="col-sm-4" [ngClass]="{'text-danger':toDo.taskPriority=='3','text-warning':toDo.taskPriority=='2','text-info':toDo.taskPriority=='1'}">{{priorityMap(toDo.taskPriority)}}</div>
+                <div class="col-sm-4">{{toDo.taskDate}}</div>
+            </div>
+        </div>
+    </div>
+</div>

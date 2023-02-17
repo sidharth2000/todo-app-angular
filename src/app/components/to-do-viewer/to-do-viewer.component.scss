@@ -1,0 +1,15 @@
+.viewer-box{
+    height: 66%;
+    margin-top: 4%;
+}
+
+
+@media (max-width:480px)  { 
+    .col-sm-4{
+        width: 33%;
+    }
+}
+
+.heading:hover{
+    cursor: pointer;
+}
